@@ -13,7 +13,7 @@ SwiftNIO SSL provides two `ChannelHandler`s to use to secure a data stream: the 
 Additionally, we provide a number of low-level primitives for configuring your TLS connections. These will be shown below.
 
 To secure a server connection, you will need a X.509 certificate chain in a file (either PEM or DER, but PEM is far easier), and the associated private key for the leaf certificate. These objects can then be wrapped up in a `TLSConfiguration` object that is used to initialize the `ChannelHandler`.
-
+dfoo
 For example:
 
 ```swift
