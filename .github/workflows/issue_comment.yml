@@ -11,3 +11,4 @@ jobs:
     uses: rnro/swift-nio/.github/workflows/benchmarks_update.yml@main
     with:
       benchmark_package_path: "Benchmarks"
+      issue_url: ${{ github.event.comment.issue_url }}
