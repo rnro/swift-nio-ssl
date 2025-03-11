@@ -4,7 +4,7 @@ on:
     types: [created, edited]
 
 jobs:
-  benchmarks:
+  update-benchmarks:
     if: github.event.issue.pull_request && contains(fromJson('["COLLABORATOR","MEMBER","OWNER"]'), github.event.issue.author_association) && startsWith(github.event.comment.body, '/action update benchmarks')
     name: Update Benchmarks
     # Workaround https://github.com/nektos/act/issues/1875
@@ -12,3 +12,8 @@ jobs:
     with:
       benchmark_package_path: "Benchmarks"
       issue_url: ${{ github.event.comment.issue_url }}
+
+  rerun-benchmarks:
+    name: Benchmarks
+    needs: update-benchmarks
+    uses: ./.github/workflows/benchmarks.yml
