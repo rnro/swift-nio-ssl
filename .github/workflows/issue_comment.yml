@@ -1,0 +1,13 @@
+name: Issue Comment
+on:
+  issue_comment:
+    types: [created, edited]
+
+jobs:
+  benchmarks:
+    if: github.event.issue.pull_request && contains(fromJson('["COLLABORATOR","MEMBER","OWNER"]'), github.event.issue.author_association) && startsWith(github.event.comment.body, '/action update benchmarks')
+    name: Update Benchmarks
+    # Workaround https://github.com/nektos/act/issues/1875
+    uses: rnro/swift-nio/.github/workflows/benchmarks_update.yml@main
+    with:
+      benchmark_package_path: "Benchmarks"
