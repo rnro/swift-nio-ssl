@@ -11,7 +11,7 @@ To get started, check out the [API docs](https://swiftpackageindex.com/apple/swi
 SwiftNIO SSL provides two `ChannelHandler`s to use to secure a data stream: the `NIOSSLClientHandler` and the `NIOSSLServerHandler`. Each of these can be added to a `Channel` to secure the communications on that channel.
 
 Additionally, we provide a number of low-level primitives for configuring your TLS connections. These will be shown below.
-
+foo
 To secure a server connection, you will need a X.509 certificate chain in a file (either PEM or DER, but PEM is far easier), and the associated private key for the leaf certificate. These objects can then be wrapped up in a `TLSConfiguration` object that is used to initialize the `ChannelHandler`.
 
 For example:
